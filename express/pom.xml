@@ -11,6 +11,13 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
 
 	<dependencies>
 		<!-- spring boot test -->
@@ -48,5 +55,9 @@
 	</build>
   <modules>
     <module>express.web</module>
+    <module>express.model</module>
+    <module>express.base</module>
+    <module>express.dao</module>
+    <module>express.service</module>
   </modules>
 </project>
