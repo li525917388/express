@@ -1,5 +1,8 @@
 package com.ldh.express.model.sys;
 
+import java.util.List;
+
+import com.ldh.express.base.annotation.TempField;
 import com.ldh.express.base.core.BaseModel;
 
 /**
@@ -28,7 +31,10 @@ public class MenuButton extends BaseModel {
 	
 	private String openType;		// 打开方式
 	
-	private int menuOrder;		// 菜单顺序
+	private int menuOrder;			// 菜单顺序
+	
+	@TempField
+	private List<MenuButton> childList;	//子菜单
 
 	public String getMenuCode() {
 		return menuCode;
@@ -108,6 +114,14 @@ public class MenuButton extends BaseModel {
 
 	public void setMenuOrder(int menuOrder) {
 		this.menuOrder = menuOrder;
+	}
+
+	public List<MenuButton> getChildList() {
+		return childList;
+	}
+
+	public void setChildList(List<MenuButton> childList) {
+		this.childList = childList;
 	}
 	
 }

@@ -22,6 +22,12 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.ldh</groupId>
+			<artifactId>express.service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 		<!-- Spring boot 核心web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,6 +44,12 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 	</dependencies>
 

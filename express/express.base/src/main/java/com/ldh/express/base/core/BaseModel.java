@@ -8,13 +8,13 @@ package com.ldh.express.base.core;
  */
 public class BaseModel {
 
-	protected Long id;		//主键
+	protected long id;		//主键
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	

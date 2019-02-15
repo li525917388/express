@@ -1,5 +1,6 @@
-package com.ldh.express.web;
+package com.ldh.express;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019年2月1日
  *
  */
+@MapperScan(basePackages={"com.ldh.express.base.core","com.ldh.express.dao.*"})
 @SpringBootApplication
 public class WebApp {
 

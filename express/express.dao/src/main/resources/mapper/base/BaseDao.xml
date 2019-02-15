@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ldh.express.base.core.BaseDao">
+
+	<!-- 查询全部数据 -->
+	<select id="queryList" parameterType="com.ldh.express.base.sql.SqlParam" resultType="java.util.Map">
+		select * from `${tableName}`
+	</select>
+	
+	<!-- 带参数查询 -->
+	<select id="queryParamList" parameterType="com.ldh.express.base.sql.SqlParam" resultType="java.util.Map">
+		select * from `${tableName}`
+		<where>
+			<foreach collection="fields" item="field" separator=" and ">
+				`${field.fieldName}`=#{field.fieldValue}
+			</foreach>
+		</where>
+	</select>
+	
+	<!-- 新增 -->
+	<insert id="insert" parameterType="com.ldh.express.base.sql.SqlParam">
+		insert into `${tableName}` 
+		<foreach collection="fields" item="field" open="(" close=")" separator=",">
+			`${field.fieldName}`
+		</foreach> 
+		values 
+		<foreach collection="fields" item="field" open="(" close=")" separator=",">
+			#{field.fieldValue}
+		</foreach>
+	</insert>
+	
+	<!-- 更新 -->
+	<update id="update" parameterType="com.ldh.express.base.sql.SqlParam">
+		update `${tableName}` 
+		<set>
+			<foreach collection="fields" item="field" separator=",">
+				`${field.fieldName}`=#{field.fieldValue}
+			</foreach>
+		</set>
+		where id=#{id}
+	</update>
+	
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="com.ldh.express.base.sql.SqlParam">
+		delete from `${tableName}` where id=#{id} 
+	</delete>
+	
+	<!-- 条件删除 -->
+	<delete id="deleteParams" parameterType="com.ldh.express.base.sql.SqlParam">
+		delete from `${tableName}` 
+		<where>
+			<foreach collection="fields" item="field" separator=",">
+				`${field.fieldName}`=#{field.fieldValue}
+			</foreach>
+		</where>
+	</delete>
+</mapper>
