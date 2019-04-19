@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ldh.express.base.util.BaseConstants;
 import com.ldh.express.base.util.ServiceResult;
 import com.ldh.express.model.sys.MenuButton;
-import com.ldh.express.model.sys.User;
 import com.ldh.express.service.sys.MenuButtonService;
 
 /**
