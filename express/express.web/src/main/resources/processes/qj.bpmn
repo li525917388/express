@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="qj_flow" name="qj" isExecutable="true">
+    <documentation>请假</documentation>
+    <startEvent id="qj_start" name="qj_start"></startEvent>
+    <userTask id="apply" name="apply" activiti:candidateUsers="admin,ldh,cxj,tyl">
+      <extensionElements>
+        <activiti:formProperty id="day" name="day" type="long"></activiti:formProperty>
+        <modeler:user-info-email-admin xmlns:modeler="http://activiti.com/modeler"><![CDATA[admin]]></modeler:user-info-email-admin>
+        <modeler:user-info-lastname-admin xmlns:modeler="http://activiti.com/modeler"><![CDATA[Administrator]]></modeler:user-info-lastname-admin>
+        <modeler:user-info-email-ldh xmlns:modeler="http://activiti.com/modeler"><![CDATA[ldh@qq.com]]></modeler:user-info-email-ldh>
+        <modeler:user-info-firstname-ldh xmlns:modeler="http://activiti.com/modeler"><![CDATA[Li]]></modeler:user-info-firstname-ldh>
+        <modeler:user-info-lastname-ldh xmlns:modeler="http://activiti.com/modeler"><![CDATA[Dehuan]]></modeler:user-info-lastname-ldh>
+        <modeler:user-info-email-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[cxj@qq.com]]></modeler:user-info-email-cxj>
+        <modeler:user-info-firstname-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[Chen]]></modeler:user-info-firstname-cxj>
+        <modeler:user-info-lastname-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[Xujun]]></modeler:user-info-lastname-cxj>
+        <modeler:user-info-email-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[tyl@qq.com]]></modeler:user-info-email-tyl>
+        <modeler:user-info-firstname-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[Tang]]></modeler:user-info-firstname-tyl>
+        <modeler:user-info-lastname-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[Yaliang]]></modeler:user-info-lastname-tyl>
+        <modeler:activiti-idm-candidate-user xmlns:modeler="http://activiti.com/modeler"><![CDATA[true]]></modeler:activiti-idm-candidate-user>
+        <modeler:initiator-can-complete xmlns:modeler="http://activiti.com/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="pd" name="panduan"></exclusiveGateway>
+    <userTask id="task2" name="t2" activiti:candidateUsers="cxj">
+      <extensionElements>
+        <modeler:user-info-email-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[cxj@qq.com]]></modeler:user-info-email-cxj>
+        <modeler:user-info-firstname-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[Chen]]></modeler:user-info-firstname-cxj>
+        <modeler:user-info-lastname-cxj xmlns:modeler="http://activiti.com/modeler"><![CDATA[Xujun]]></modeler:user-info-lastname-cxj>
+        <modeler:activiti-idm-candidate-user xmlns:modeler="http://activiti.com/modeler"><![CDATA[true]]></modeler:activiti-idm-candidate-user>
+        <modeler:initiator-can-complete xmlns:modeler="http://activiti.com/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+      </extensionElements>
+    </userTask>
+    <userTask id="task1" name="t1" activiti:assignee="ldh">
+      <extensionElements>
+        <modeler:activiti-idm-assignee xmlns:modeler="http://activiti.com/modeler"><![CDATA[true]]></modeler:activiti-idm-assignee>
+        <modeler:assignee-info-email xmlns:modeler="http://activiti.com/modeler"><![CDATA[ldh@qq.com]]></modeler:assignee-info-email>
+        <modeler:assignee-info-firstname xmlns:modeler="http://activiti.com/modeler"><![CDATA[Li]]></modeler:assignee-info-firstname>
+        <modeler:assignee-info-lastname xmlns:modeler="http://activiti.com/modeler"><![CDATA[Dehuan]]></modeler:assignee-info-lastname>
+        <modeler:initiator-can-complete xmlns:modeler="http://activiti.com/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+      </extensionElements>
+    </userTask>
+    <userTask id="aprov" name="aprov" activiti:candidateUsers="tyl">
+      <extensionElements>
+        <modeler:user-info-email-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[tyl@qq.com]]></modeler:user-info-email-tyl>
+        <modeler:user-info-firstname-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[Tang]]></modeler:user-info-firstname-tyl>
+        <modeler:user-info-lastname-tyl xmlns:modeler="http://activiti.com/modeler"><![CDATA[Yaliang]]></modeler:user-info-lastname-tyl>
+        <modeler:activiti-idm-candidate-user xmlns:modeler="http://activiti.com/modeler"><![CDATA[true]]></modeler:activiti-idm-candidate-user>
+        <modeler:initiator-can-complete xmlns:modeler="http://activiti.com/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+      </extensionElements>
+    </userTask>
+    <endEvent id="qj_end" name="qj_end"></endEvent>
+    <sequenceFlow id="line3" sourceRef="task1" targetRef="aprov"></sequenceFlow>
+    <sequenceFlow id="line5" sourceRef="aprov" targetRef="qj_end"></sequenceFlow>
+    <sequenceFlow id="line1" sourceRef="qj_start" targetRef="apply"></sequenceFlow>
+    <sequenceFlow id="line2" sourceRef="apply" targetRef="pd"></sequenceFlow>
+    <sequenceFlow id="pd_line1" sourceRef="pd" targetRef="task1">
+      <documentation>${day&lt;=3}</documentation>
+    </sequenceFlow>
+    <sequenceFlow id="pd_line2" sourceRef="pd" targetRef="task2">
+      <documentation>${day&gt;3}</documentation>
+    </sequenceFlow>
+    <sequenceFlow id="line4" sourceRef="task2" targetRef="aprov"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_qj_flow">
+    <bpmndi:BPMNPlane bpmnElement="qj_flow" id="BPMNPlane_qj_flow">
+      <bpmndi:BPMNShape bpmnElement="qj_start" id="BPMNShape_qj_start">
+        <omgdc:Bounds height="30.0" width="30.0" x="45.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="apply" id="BPMNShape_apply">
+        <omgdc:Bounds height="80.0" width="100.0" x="165.0" y="125.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pd" id="BPMNShape_pd">
+        <omgdc:Bounds height="40.0" width="40.0" x="310.0" y="145.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="task2" id="BPMNShape_task2">
+        <omgdc:Bounds height="80.0" width="100.0" x="480.0" y="240.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="task1" id="BPMNShape_task1">
+        <omgdc:Bounds height="80.0" width="100.0" x="480.0" y="45.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="aprov" id="BPMNShape_aprov">
+        <omgdc:Bounds height="80.0" width="100.0" x="690.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="qj_end" id="BPMNShape_qj_end">
+        <omgdc:Bounds height="28.0" width="28.0" x="835.0" y="161.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="line4" id="BPMNEdge_line4">
+        <omgdi:waypoint x="580.0" y="280.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="280.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="line5" id="BPMNEdge_line5">
+        <omgdi:waypoint x="790.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="835.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="pd_line1" id="BPMNEdge_pd_line1">
+        <omgdi:waypoint x="330.0" y="145.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="85.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="line1" id="BPMNEdge_line1">
+        <omgdi:waypoint x="75.0" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="165.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="pd_line2" id="BPMNEdge_pd_line2">
+        <omgdi:waypoint x="330.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="280.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="280.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="line3" id="BPMNEdge_line3">
+        <omgdi:waypoint x="580.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="135.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="line2" id="BPMNEdge_line2">
+        <omgdi:waypoint x="265.0" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
