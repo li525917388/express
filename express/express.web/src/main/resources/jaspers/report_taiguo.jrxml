@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="泰国模版(泰国语)" pageWidth="283" pageHeight="515" columnWidth="283" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" >
+	<property name="ireport.zoom" value="1.948717100000039"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="picpath" class="java.lang.String"/>
+	<parameter name="parent" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$F{parent}]]></defaultValueExpression>
+	</parameter>
+	<field name="SENDERDATE" class="java.lang.String"/>
+	<field name="SENDERNAME" class="java.lang.String"/>
+	<field name="SENDERADDRESS" class="java.lang.String"/>
+	<field name="RECEIVERNAME" class="java.lang.String"/>
+	<field name="RECEIVERADDRESS" class="java.lang.String"/>
+	<field name="curtime" class="java.lang.String"/>
+	<field name="PAYMETHOD" class="java.lang.String"/>
+	<field name="SOURCE" class="java.lang.String"/>
+	<field name="ORDERNO" class="java.lang.String"/>
+	<field name="WEIGHT" class="java.lang.String"/>
+	<field name="PRODUCTTYPE" class="java.lang.String"/>
+	<field name="PAYFORGOODS" class="java.lang.String"/>
+	<field name="BILLCODE" class="java.lang.String"/>
+	<field name="INSURANCEFEE" class="java.lang.String"/>
+	<field name="OTHERFEES" class="java.lang.String"/>
+	<field name="ADDDUTY" class="java.lang.String"/>
+	<field name="TOTALFREIGHT" class="java.lang.String"/>
+	<field name="BIGCHAR" class="java.lang.String"/>
+	<field name="CUSTOMERNO" class="java.lang.String"/>
+	<field name="PRINTNUM" class="java.lang.String"/>
+	<field name="printdate" class="java.lang.String"/>
+	<field name="SENDINFO" class="java.lang.String"/>
+	<field name="RECEIVEINFO" class="java.lang.String"/>
+	<field name="GOODSNAMELIST" class="java.lang.String"/>
+	<field name="CODFLAG" class="java.lang.String"/>
+	<field name="BASEPATH" class="java.lang.String"/>
+	<field name="BJFLAG" class="java.lang.String"/>
+	<field name="cashflag" class="java.lang.String"/>
+	<field name="savepath" class="java.lang.String"/>
+	<field name="ID" class="java.lang.String"/>
+	<field name="REMARKS" class="java.lang.String"/>
+	<field name="NUMBERS" class="java.lang.String"/>
+	<field name="parent" class="java.lang.String"/>
+	<field name="note" class="java.lang.String"/>
+	<field name="FREIGHTREC" class="java.lang.String"/>
+	<field name="SUBTOTAL" class="java.lang.String"/>
+	<field name="RECEIVERTEL" class="java.lang.String"/>
+	<field name="RECEIVERAREA" class="java.lang.String"/>
+	<field name="RECEIVERCITY" class="java.lang.String"/>
+	<field name="RECEIVERAREACODE" class="java.lang.String"/>
+	<field name="SENDERTEL" class="java.lang.String"/>
+	<field name="THSENDERPOST" class="java.lang.String"/>
+	<field name="SENDERPROVINCE" class="java.lang.String"/>
+	<field name="SENDERCITY" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="515" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="318" width="281" height="1" />
+			</line>
+			<image>
+				<reportElement x="85" y="397" width="214" height="100" />
+				<imageExpression><![CDATA[($F{CODFLAG}.equals("0")?$F{BASEPATH}+"images/ireport_mage/cod-false.png":$F{BASEPATH}+"images/ireport_mage/cod-true.png")]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="176" width="282" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="366" width="276" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="29" width="283" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="69" width="210" height="1" />
+			</line>
+			<line>
+				<reportElement x="1" y="486" width="205" height="1" />
+			</line>
+			<textField>
+				<reportElement x="30" y="30" width="175" height="20" />
+				<textElement>
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["From : "+$F{SENDERNAME}+", "+$F{SENDERTEL}+"\n"+$F{SENDERCITY}+", "+$F{SENDERPROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="49" width="175" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["To : "+$F{RECEIVERNAME}+", "+$F{RECEIVERTEL}+"\n"+$F{RECEIVERAREA}+", "+$F{RECEIVERCITY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="59" width="70" height="10" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[TAX ID : 0105561140115]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="84" width="210" height="1" />
+			</line>
+			<textField>
+				<reportElement x="12" y="70" width="37" height="14" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{WEIGHT} +" KG"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="210" y="70" width="1" height="57" />
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="115" width="209" height="12" forecolor="#FFFFFF" backcolor="#000000" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ส่วนสำหรับผู้ส่ง]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="269" width="282" height="1" />
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="318" width="203" height="12" forecolor="#FFFFFF" backcolor="#000000" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="9" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[สำหรับสาขาปลายทาง]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="366" width="274" height="1" />
+			</line>
+			<line>
+				<reportElement x="1" y="329" width="281" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="428" width="283" height="1" />
+			</line>
+			<textField>
+				<reportElement x="15" y="367" width="200" height="24" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8" isBold="false" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["To : "+$F{RECEIVERNAME}+", "+$F{RECEIVERTEL}+"\n"+
+$F{RECEIVERADDRESS}+", "+$F{RECEIVERAREA}+", "+$F{RECEIVERCITY}+", "+$F{RECEIVERAREACODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="390" width="200" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8" isBold="false" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["From : "+$F{SENDERNAME}+", "+$F{SENDERTEL}+"\n"+
+$F{SENDERADDRESS}+", "+$F{SENDERCITY}+", "+$F{SENDERPROVINCE}+", "+$F{THSENDERPOST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="429" width="34" height="17" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{WEIGHT} +" KG"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="429" width="30" height="17" />
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRODUCTTYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="430" width="80" height="15" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAYFORGOODS}.equals("0")?"Non COD":"COD:"+$F{PAYFORGOODS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="206" y="430" width="1" height="70" />
+			</line>
+			<staticText>
+				<reportElement x="15" y="449" width="34" height="12" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าประกันภัย : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="471" width="34" height="12" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ยอดรวม : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="460" width="34" height="12" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[VAT 7% : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="471" width="34" height="12" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าส่ง : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="460" width="34" height="12" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าบรรจุภัณฑ์ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="449" width="34" height="12" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Sub total: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="487" width="205" height="12" forecolor="#FFFFFF" backcolor="#000000" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[สำหรับผูรับ]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="" mode="Opaque" x="85" y="333" width="178" height="32" />
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128B" drawText="false" checksumRequired="false" barWidth="2" barHeight="10">
+					<jr:codeExpression><![CDATA[$F{BILLCODE}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<staticText>
+				<reportElement x="14" y="270" width="154" height="29" forecolor="#333333" />
+				<textElement>
+					<font fontName="TaiGuo" size="6" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[หลังจากเซ็นรับพัสดุ
+ผูรับยืนยันความถูกตองของขอมูลบนใบเสร็จและสินคาภายในพัสดุ
+เขาใจและยอมรับเง�่อนไขขอกำหนดการจัดสงของบร�ษัท J&T Express]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="299" width="34" height="21" forecolor="#333333" />
+				<textElement>
+					<font fontName="TaiGuo" size="6" isItalic="true"/>
+				</textElement>
+				<text><![CDATA["รหัสพนักงาน
+วันที่ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="305" width="65" height="10" forecolor="#333333" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="6" isItalic="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SENDERDATE}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="168" y="288" width="30" height="29" forecolor="#333333" />
+				<imageExpression><![CDATA[$F{BASEPATH}+"images/ireport_mage/sign1.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="446" width="205" height="1" />
+			</line>
+			<line>
+				<reportElement x="125" y="428" width="1" height="59" />
+			</line>
+			<textField>
+				<reportElement x="207" y="277" width="71" height="33" />
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PAYFORGOODS}.equals("0")?"Non COD":"COD:"+$F{PAYFORGOODS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="219" width="282" height="1" />
+			</line>
+			<componentElement>
+				<reportElement x="43" y="221" width="185" height="28" />
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128B" drawText="false" checksumRequired="false" barWidth="0" barHeight="15">
+					<jr:codeExpression><![CDATA[$F{BILLCODE}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="43" y="250" width="185" height="19" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BILLCODE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="176" width="281" height="52" />
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="38" isBold="true" isItalic="false" isStrikeThrough="false" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BIGCHAR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="139" width="48" height="30" />
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="20" isBold="true" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRODUCTTYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="85" width="32" height="10" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าประกันภัย : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="85" width="34" height="10" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Sub total: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="85" width="22" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="95" width="32" height="10" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าบรรจุภัณฑ์ : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="95" width="22" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="95" width="25" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="95" width="34" height="10" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[VAT 7% : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="105" width="22" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="105" width="34" height="10" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ยอดรวม : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="105" width="32" height="10" />
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ค่าส่ง : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="105" width="25" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="70" width="27" height="14" />
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRODUCTTYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="70" width="84" height="14" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAYFORGOODS}.equals("0")?"Non COD":"COD:"+$F{PAYFORGOODS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="125" y="70" width="1" height="46" />
+			</line>
+			<image>
+				<reportElement x="216" y="74" width="65" height="50" />
+				<imageExpression><![CDATA[$F{BASEPATH}+"rotaPrin/rotaPrintAction!qrCode.action?billcode="+$F{BILLCODE}]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement key="" mode="Opaque" x="93" y="1" width="178" height="28" />
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128B" drawText="false" checksumRequired="false" barWidth="2" barHeight="10">
+					<jr:codeExpression><![CDATA[$F{BILLCODE}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<line>
+				<reportElement x="49" y="70" width="1" height="15" />
+			</line>
+			<line>
+				<reportElement x="76" y="70" width="1" height="15" />
+			</line>
+			<line>
+				<reportElement x="191" y="127" width="1" height="49" />
+			</line>
+			<textField>
+				<reportElement x="86" y="350" width="185" height="15" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BILLCODE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="43" y="430" width="1" height="15" />
+			</line>
+			<line>
+				<reportElement x="-38" y="390" width="1" height="15" />
+			</line>
+			<line>
+				<reportElement x="-33" y="380" width="1" height="15" />
+			</line>
+			<line>
+				<reportElement x="74" y="431" width="1" height="15" />
+			</line>
+			<textField>
+				<reportElement x="86" y="15" width="185" height="14" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BILLCODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="126" y="447" width="80" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8"/>
+				</textElement>
+				<text><![CDATA[ยอดชำระรวมที่ผูสงตองชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="473" width="80" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8"/>
+				</textElement>
+				<text><![CDATA[รวมภาษีมูลคาเพิ่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="85" width="84" height="8" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="6"/>
+				</textElement>
+				<text><![CDATA[ยอดชำระรวมที่ผูสงตองชำระ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="92" width="84" height="15" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="8" isBold="false" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTALFREIGHT}+" THB"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="126" y="107" width="84" height="9" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="6"/>
+				</textElement>
+				<text><![CDATA[รวมภาษีมูลคาเพิ่ม]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="46" y="298" width="65" height="9" forecolor="#333333" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="6" isItalic="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["YUNLU  1"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="179" y="365" width="102" height="68" forecolor="#999999" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="42" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMBERS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="445" width="74" height="53" forecolor="#000000" />
+				<textElement verticalAlignment="Top">
+					<font fontName="TaiGuo" size="18" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REMARKS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="139" width="114" height="37" />
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="227" width="43" height="41" forecolor="#000000" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REMARKS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="15" y="415" width="264" height="13" />
+				<textElement verticalAlignment="Top">
+					<font fontName="TaiGuo" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ประเภทพัสดุ:  "+$F{GOODSNAMELIST}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="207" y="428" width="74" height="17" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="11"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="205" y="318" width="76" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["YUNLU"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="126" y="459" width="80" height="15" />
+				<textElement textAlignment="Center">
+					<font fontName="TaiGuo" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[0 THB]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="85" width="25" height="10" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7" pdfFontName="TaiGuo.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="70" width="49" height="14" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PP_PM"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="429" width="50" height="17" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PP_PM"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="449" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="460" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="471" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="471" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="460" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="449" width="20" height="12" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TaiGuo" size="7"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="31" width="13" height="33" />
+				<imageExpression><![CDATA[$F{BASEPATH}+"images/ireport_mage/form-to.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

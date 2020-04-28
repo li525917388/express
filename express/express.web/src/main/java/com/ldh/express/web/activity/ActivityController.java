@@ -9,6 +9,8 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController  
 @RequestMapping("/act")
 public class ActivityController {
+	
+	private static final Log logger = LogFactory.getLog(ActivityController.class);
 	
 	@Autowired  
     private RuntimeService runtimeService;
@@ -41,6 +45,8 @@ public class ActivityController {
 	@RequestMapping(value="/start",method=RequestMethod.GET) 
 	public String test(String flowid){
 		System.out.println("开始流程：" + flowid);
+		
+		logger.info("开始流程");
 		
 		if(flowid == null){
 			return "flowid为空";
@@ -126,4 +132,7 @@ public class ActivityController {
 		return list;
 		
 	}
+	
+	
+	
 }
